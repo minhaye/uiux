@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router";
 import { Layout } from "./components/layout/layout";
+import LandingPage from "./pages/landing";
 import DoctorDashboard from "./pages/doctor/dashboard";
 import DoctorPatients from "./pages/doctor/patients";
 import PatientDetail from "./pages/doctor/patient-detail";
@@ -39,65 +40,10 @@ import PatientMedicalRecords from "./pages/patient/medical-records";
 import PatientNotifications from "./pages/patient/notifications";
 import PatientProfile from "./pages/patient/profile";
 
-function RoleSwitcher() {
-  return (
-    <div className="flex h-screen items-center justify-center bg-gray-50">
-      <div className="text-center space-y-6">
-        <div>
-          <h1 className="text-4xl font-bold text-gray-900">NHÓM 4</h1>
-          <p className="text-gray-500 mt-2">Hệ thống quản lý phòng khám đa vai trò</p>
-        </div>
-        <div className="grid gap-4 md:grid-cols-5 max-w-7xl">
-          <a
-            href="/patient/home"
-            className="block p-8 rounded-xl border-2 border-gray-200 bg-white hover:border-pink-500 hover:shadow-lg transition-all"
-          >
-            <div className="text-5xl mb-4">👤</div>
-            <h2 className="text-xl font-semibold text-gray-900">Người cần tư vấn</h2>
-            <p className="text-sm text-gray-500 mt-2">Chưa đăng nhập</p>
-          </a>
-          <a
-            href="/patient/dashboard"
-            className="block p-8 rounded-xl border-2 border-gray-200 bg-white hover:border-pink-500 hover:shadow-lg transition-all"
-          >
-            <div className="text-5xl mb-4">🧑‍🦱</div>
-            <h2 className="text-xl font-semibold text-gray-900">Bệnh nhân</h2>
-            <p className="text-sm text-gray-500 mt-2">Đã đăng nhập</p>
-          </a>
-          <a
-            href="/doctor"
-            className="block p-8 rounded-xl border-2 border-gray-200 bg-white hover:border-blue-500 hover:shadow-lg transition-all"
-          >
-            <div className="text-5xl mb-4">👨‍⚕️</div>
-            <h2 className="text-xl font-semibold text-gray-900">Bác sĩ</h2>
-            <p className="text-sm text-gray-500 mt-2">Quản lý bệnh nhân</p>
-          </a>
-          <a
-            href="/expert"
-            className="block p-8 rounded-xl border-2 border-gray-200 bg-white hover:border-green-500 hover:shadow-lg transition-all"
-          >
-            <div className="text-5xl mb-4">👨‍🏫</div>
-            <h2 className="text-xl font-semibold text-gray-900">Chuyên gia</h2>
-            <p className="text-sm text-gray-500 mt-2">Tư vấn chuyên môn</p>
-          </a>
-          <a
-            href="/manager"
-            className="block p-8 rounded-xl border-2 border-gray-200 bg-white hover:border-purple-500 hover:shadow-lg transition-all"
-          >
-            <div className="text-5xl mb-4">👨‍💼</div>
-            <h2 className="text-xl font-semibold text-gray-900">Quản lý</h2>
-            <p className="text-sm text-gray-500 mt-2">Quản trị hệ thống</p>
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <RoleSwitcher />,
+    element: <LandingPage />,
   },
   {
     path: "/patient/home",
