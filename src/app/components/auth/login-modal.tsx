@@ -40,6 +40,15 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
       hoverColor: "hover:shadow-indigo-500/25",
     },
     {
+      id: "expert",
+      name: "Chuyên gia",
+      description: "Tư vấn chuyên môn",
+      icon: "👨‍🏫",
+      route: "/expert",
+      color: "from-emerald-500 to-teal-500",
+      hoverColor: "hover:shadow-emerald-500/25",
+    },
+    {
       id: "manager",
       name: "Quản lý",
       description: "Quản trị hệ thống",
