@@ -1,0 +1,169 @@
+USER FLOW - CHUYEN GIA
+
+Muc tieu:
+Mo ta luong su dung cua vai tro Chuyen gia trong he thong quan ly phong kham da vai tro de nguoi khac co the ve lai user flow.
+
+1. Diem vao chinh
+
+Nguoi dung chuyen sang khu Chuyen gia tu trang chon vai tro tai "/".
+Sau do he thong vao layout Chuyen gia voi thanh ben trai va topbar co san.
+
+2. Cau truc dieu huong chinh
+
+Chuyen gia co 5 man hinh chinh:
+
+- Dashboard: "/expert"
+- Danh sach ca danh gia: "/expert/cases"
+- Chi tiet ca danh gia: "/expert/cases/:id"
+- Chat va yeu cau: "/expert/chat"
+- Bao cao thong ke: "/expert/reports"
+- Ho so ca nhan: "/expert/profile"
+
+3. User flow tong quan
+
+Start
+  -> Chon vai tro "Chuyen gia"
+  -> Dashboard Chuyen gia
+  -> Tinh huong tiep theo:
+     - Xem ca can xu ly
+     - Mo danh sach ca danh gia
+     - Mo chat tu van / yeu cau
+     - Xem bao cao thong ke
+     - Vao ho so ca nhan
+
+4. Flow chi tiet theo tung nhiem vu
+
+4.1. Dashboard
+
+Dashboard la man hinh tong quan.
+Tai day chuyen gia theo doi:
+- So ca cho danh gia
+- So ca dang danh gia
+- So ca da hoan thanh
+- Thoi gian trung binh xu ly
+
+Tu Dashboard co the di sang:
+- Danh sach ca danh gia
+- Chat tu van
+- Bao cao thong ke
+- Ho so ca nhan
+
+Flow goi y:
+Dashboard -> chon 1 hanh dong nhanh -> sang man hinh tuong ung.
+
+4.2. Danh sach ca danh gia
+
+Khi vao "/expert/cases", chuyen gia xem tat ca ca can danh gia.
+
+Hanh dong chinh:
+- Tim theo ten benh nhan hoac ma ca
+- Loc danh sach
+- Xem trang thai ca
+- Chon "Chi tiet" de vao ca cu the
+
+Flow:
+Dashboard -> Danh sach ca danh gia -> Chon 1 ca -> Chi tiet ca danh gia
+
+4.3. Chi tiet ca danh gia
+
+Tai "/expert/cases/:id", chuyen gia:
+- Doc thong tin ca benh
+- Xem chan doan bac si da nhap
+- Xem du lieu bac si nhap
+- Xem file dinh kem
+- Xem lich su phan hoi
+- Viet phan hoi chuyen mon
+- Chon muc uu tien phan hoi
+- Gui phan hoi
+- Danh dau hoan thanh
+
+Flow chinh:
+Danh sach ca danh gia -> Chi tiet ca danh gia -> Nhap phan hoi -> Gui phan hoi -> Hoan thanh hoac quay lai danh sach
+
+4.4. Chat va yeu cau
+
+Tai "/expert/chat", chuyen gia xu ly giao tiep theo 3 nhom:
+- Nguoi dung
+- Bac si
+- Yeu cau
+
+Trong man hinh nay co 3 tab:
+- Nguoi dung: tra loi truc tiep cho nguoi can tu van / nguoi can kham benh
+- Bac si: trao doi chuyen mon
+- Yeu cau: quan ly hang cho, phan loai, dong mo yeu cau
+
+Hanh dong chinh:
+- Chon doan chat
+- Doc noi dung gan nhat
+- Gui tin nhan moi
+- Chuyen giua cac tab
+- Cap nhat trang thai yeu cau: cho tiep nhan, dang xu ly, da dong
+
+Flow:
+Dashboard hoac sidebar -> Chat & yeu cau -> Chon tab -> Chon thread/yeu cau -> Doc / tra loi / doi trang thai -> tiep tuc sang thread khac
+
+4.5. Bao cao thong ke
+
+Tai "/expert/reports", chuyen gia xem so lieu tong hop:
+- Tong so ca danh gia
+- Ty le hoan thanh
+- Thoi gian trung binh
+- Danh gia trung binh
+- Bieu do so ca theo thang
+- Bieu do thoi gian phan hoi
+- Phan bo theo chuyen khoa
+- Top bac si gui ca nhieu nhat
+
+Day la nhom luong doc thong ke, khong co buoc xu ly giao dich phuc tap.
+
+Flow:
+Dashboard -> Bao cao thong ke -> Doc so lieu -> Tro ve Dashboard hoac di sang ca/chat neu can dieu tra them
+
+4.6. Ho so ca nhan
+
+Tai "/expert/profile", chuyen gia co the:
+- Xem thong tin ca nhan
+- Cap nhat ten, hoc vi, email, so dien thoai, chuyen khoa, kinh nghiem
+- Doi anh dai dien
+- Doi mat khau
+
+Flow:
+Sidebar -> Ho so ca nhan -> Chinh sua thong tin -> Luu thay doi hoac huy bo
+
+5. Hanh vi chuyen huong va quay lui
+
+- Tu Dashboard co the vao tat ca module con.
+- Tu Danh sach ca danh gia co the vao Chi tiet ca.
+- Tu Chi tiet ca co the gui phan hoi va danh dau hoan thanh.
+- Tu Chat co the chuyen giua cac tab va cac thread khac nhau.
+- Tu Bao cao va Ho so co the quay ve Dashboard qua thanh dieu huong.
+
+6. Tom tat de ve lai so do user flow
+
+Neu ve nhanh, co the dung cau truc sau:
+
+Start
+  -> Chon vai tro Chuyen gia
+  -> Dashboard
+     -> Danh sach ca danh gia
+        -> Chi tiet ca danh gia
+           -> Viet phan hoi
+           -> Gui phan hoi / danh dau hoan thanh
+     -> Chat & yeu cau
+        -> Nguoi dung / Bac si / Yeu cau
+           -> Chon thread
+           -> Doc / tra loi / cap nhat trang thai
+     -> Bao cao thong ke
+        -> Xem so lieu, bieu do
+     -> Ho so ca nhan
+        -> Chinh sua thong tin
+        -> Doi mat khau
+
+7. Y nghia cua luong
+
+Vai tro Chuyen gia trong project nay chu yeu tap trung vao:
+- Danh gia ca benh do bac si gui sang
+- Trao doi chuyen mon trong chat
+- Xu ly yeu cau tu nguoi dung hoac bac si
+- Theo doi hieu suat qua bao cao
+- Quan ly thong tin ca nhan
