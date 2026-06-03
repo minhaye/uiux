@@ -13,6 +13,15 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
 
   const roles = [
     {
+      id: "consultant",
+      name: "Người cần tư vấn",
+      description: "Nhận tư vấn sức khỏe",
+      icon: "👤",
+      route: "/consultant",
+      color: "from-pink-500 to-rose-500",
+      hoverColor: "hover:shadow-pink-500/25",
+    },
+    {
       id: "patient",
       name: "Bệnh nhân",
       description: "Quản lý sức khỏe cá nhân",
